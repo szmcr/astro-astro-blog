@@ -3,7 +3,9 @@ import { siteConfig } from "../config/site-config";
 import Layout from "../layouts/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-const posts = await Astro.glob("./posts/*.{md,mdx}");
+const posts = Object.values(
+  import.meta.glob("./posts/*.{md,mdx}", { eager: true })
+);
 ---
 
 <Layout title="Santiago's Blog">
