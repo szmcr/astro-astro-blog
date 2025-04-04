@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import Layout from "src/layouts/Layout.astro";
+
+import post05Img from "@images/post-05.png";
+---
+
+<Layout title="Imagenes">
+  <h1 class="text-5xl text-white">Imagenes</h1>
+
+  <img
+    loading="eager"
+    src="/assets/images/post-05.png"
+    width="250"
+    height="250"
+  />
+
+  <Image src={post05Img} width="250" height="250" alt={"Imagen del post"} />
+  <h1>Quality Low</h1>
+  <Image
+    quality="low"
+    src={post05Img}
+    width="250"
+    height="250"
+    alt={"Imagen del post"}
+  />
+  <h1>Quality High</h1>
+  <Image
+    quality="high"
+    src={post05Img}
+    width="250"
+    height="250"
+    alt={"Imagen del post"}
+  />
+  <h1>Quality Mid</h1>
+  <Image
+    quality="medium"
+    format="webp"
+    src={post05Img}
+    width="250"
+    height="250"
+    alt={"Imagen del post"}
+  />
+
+  <div style={{ height: "3000px" }}></div>
+
+  <img loading="lazy" src="" width="250" height="250" />
+</Layout>
+
+<style>
+  @reference "@styles/global.css";
+
+  h1 {
+    @apply text-3xl text-white py-3;
+  }
+</style>
