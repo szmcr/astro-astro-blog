@@ -11,5 +11,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [mdx()],
-  site: 'https://example.com',
+  site: 'https://santi-blog-astro.netlify.app/',
 });
